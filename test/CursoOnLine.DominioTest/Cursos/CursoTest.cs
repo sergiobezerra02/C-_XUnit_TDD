@@ -16,16 +16,16 @@ namespace CursoOnLine.DominioTest.Cursos
             //Biblioteca ExpectedObject
             var cursoEsperado = new
             {
+                Id = 1,
                 Nome = "Ana Maria",
                 CargaHoraria = (double)80,
-                PublicoAlvo = "Estudantes",
+                PublicoAlvo = PublicoAlvo.Estudante,
                 Valor = (double)950
             };
-
-            
+         
 
             //Ação
-            var curso = new Curso(cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
+            var curso = new Curso(cursoEsperado.Id, cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
 
             //Verificação
             cursoEsperado.ToExpectedObject().ShouldMatch(curso);
@@ -33,22 +33,38 @@ namespace CursoOnLine.DominioTest.Cursos
         }
     }
 
+
+    public enum PublicoAlvo
+    {
+        Estudante,
+        Universitario,
+        Empregado,
+        Empreendedor
+    }
+
     public class Curso
     {
-
+        private int id;
         private string nome;
         private double cargaHoraria;
-        private string publicoAlvo;
+        private PublicoAlvo publicoAlvo;
         private double valor;
 
         public Curso() { }
 
-        public Curso(string nome, double cargaHoraria, string publicoAlvo, double valor)
+        public Curso(int id, string nome, double cargaHoraria, PublicoAlvo publicoAlvo, double valor)
         {
+            this.id = id;
             this.nome = nome;
             this.cargaHoraria = cargaHoraria;
             this.publicoAlvo = publicoAlvo;
             this.valor = valor;
+        }
+
+        public int Id
+        {
+            get { return this.id; }
+            set { this.id = value; }
         }
 
         public string Nome
@@ -63,7 +79,7 @@ namespace CursoOnLine.DominioTest.Cursos
             set { this.cargaHoraria = value; }
         }
 
-        public string PublicoAlvo
+        public PublicoAlvo PublicoAlvo
         {
             get { return this.publicoAlvo; }
             set { this.publicoAlvo = value; }
@@ -75,7 +91,22 @@ namespace CursoOnLine.DominioTest.Cursos
             set { this.valor = value; }
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Curso curso &&
+                   Id == curso.Id;
+        }
 
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id);
+        }
+
+        public string DadosCurso()
+        {
+            return $"[Curso => Id: {this.id} , Nome: {this.nome} , PublicoAlvo: {this.publicoAlvo} , Valor: {this.valor} ]";
+
+        }
     }
 
 }
