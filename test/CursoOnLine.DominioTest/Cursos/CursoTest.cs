@@ -32,8 +32,10 @@ namespace CursoOnLine.DominioTest.Cursos
 
         }
 
-        [Fact]
-        public void Teste_ValidarNome_Vazio()
+        [Theory]
+        [InlineData("")]
+        [InlineData(null)]
+        public void Teste_ValidarNome_Invalido(string nomeInvalido)
         {
             //Cenário
             //Biblioteca ExpectedObject
@@ -50,28 +52,6 @@ namespace CursoOnLine.DominioTest.Cursos
             //Ação e Verificação
             Assert.Throws<ArgumentException>(() => new Curso(cursoEsperado.Id, string.Empty, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor));
         }
-
-        [Fact]
-        public void Teste_ValidarNome_Nulo()
-        {
-            //Cenário
-            //Biblioteca ExpectedObject
-            var cursoEsperado = new
-            {
-                Id = 1,
-                Nome = "Ana Maria",
-                CargaHoraria = (double)80,
-                PublicoAlvo = PublicoAlvo.Estudante,
-                Valor = (double)950
-            };
-
-
-            //Ação e Verificação
-            Assert.Throws<ArgumentException>(() => new Curso(cursoEsperado.Id, string.Empty, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor));
-        }
-
-
-
 
     }
 
