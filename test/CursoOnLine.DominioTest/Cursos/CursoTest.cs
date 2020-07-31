@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpectedObjects;
+using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -12,20 +13,22 @@ namespace CursoOnLine.DominioTest.Cursos
         public void Teste_Dominio_Curso()
         {
             //Cenário
-            string nome = "Ana Maria";
-            double cargaHoraria = 80;
-            string publicoAlvo = "Estudantes";
-            double valor = 950;
+            //Biblioteca ExpectedObject
+            var cursoEsperado = new
+            {
+                Nome = "Ana Maria",
+                CargaHoraria = (double)80,
+                PublicoAlvo = "Estudantes",
+                Valor = (double)950
+            };
+
+            
 
             //Ação
-            var curso = new Curso(nome, cargaHoraria, publicoAlvo, valor);
+            var curso = new Curso(cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
 
             //Verificação
-            Assert.Equal(nome, curso.Nome);
-            Assert.Equal(cargaHoraria, curso.CargaHoraria);
-            Assert.Equal(publicoAlvo, curso.PublicoAlvo);
-            Assert.Equal(valor, curso.Valor);
-
+            cursoEsperado.ToExpectedObject().ShouldMatch(curso);
 
         }
     }
