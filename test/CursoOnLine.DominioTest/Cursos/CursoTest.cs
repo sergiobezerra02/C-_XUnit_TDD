@@ -31,6 +31,48 @@ namespace CursoOnLine.DominioTest.Cursos
             cursoEsperado.ToExpectedObject().ShouldMatch(curso);
 
         }
+
+        [Fact]
+        public void Teste_ValidarNome_Vazio()
+        {
+            //Cenário
+            //Biblioteca ExpectedObject
+            var cursoEsperado = new
+            {
+                Id = 1,
+                Nome = "Ana Maria",
+                CargaHoraria = (double)80,
+                PublicoAlvo = PublicoAlvo.Estudante,
+                Valor = (double)950
+            };
+
+
+            //Ação e Verificação
+            Assert.Throws<ArgumentException>(() => new Curso(cursoEsperado.Id, string.Empty, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor));
+        }
+
+        [Fact]
+        public void Teste_ValidarNome_Nulo()
+        {
+            //Cenário
+            //Biblioteca ExpectedObject
+            var cursoEsperado = new
+            {
+                Id = 1,
+                Nome = "Ana Maria",
+                CargaHoraria = (double)80,
+                PublicoAlvo = PublicoAlvo.Estudante,
+                Valor = (double)950
+            };
+
+
+            //Ação e Verificação
+            Assert.Throws<ArgumentException>(() => new Curso(cursoEsperado.Id, string.Empty, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor));
+        }
+
+
+
+
     }
 
 
@@ -54,6 +96,12 @@ namespace CursoOnLine.DominioTest.Cursos
 
         public Curso(int id, string nome, double cargaHoraria, PublicoAlvo publicoAlvo, double valor)
         {
+
+            if(string.IsNullOrEmpty(nome))
+            {
+                throw new ArgumentException();
+            }
+
             this.id = id;
             this.nome = nome;
             this.cargaHoraria = cargaHoraria;
