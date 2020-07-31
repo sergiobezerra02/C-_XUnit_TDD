@@ -1,0 +1,9 @@
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\src\CursoOnLine.Dominio\bin\Debug\netstandard2.0\CursoOnLine.Dominio.deps.json
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\src\CursoOnLine.Dominio\bin\Debug\netstandard2.0\CursoOnLine.Dominio.dll
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\src\CursoOnLine.Dominio\bin\Debug\netstandard2.0\CursoOnLine.Dominio.pdb
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\src\CursoOnLine.Dominio\obj\Debug\netstandard2.0\CursoOnLine.Dominio.csprojAssemblyReference.cache
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\src\CursoOnLine.Dominio\obj\Debug\netstandard2.0\CursoOnLine.Dominio.AssemblyInfoInputs.cache
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\src\CursoOnLine.Dominio\obj\Debug\netstandard2.0\CursoOnLine.Dominio.AssemblyInfo.cs
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\src\CursoOnLine.Dominio\obj\Debug\netstandard2.0\CursoOnLine.Dominio.csproj.CoreCompileInputs.cache
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\src\CursoOnLine.Dominio\obj\Debug\netstandard2.0\CursoOnLine.Dominio.dll
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\src\CursoOnLine.Dominio\obj\Debug\netstandard2.0\CursoOnLine.Dominio.pdb

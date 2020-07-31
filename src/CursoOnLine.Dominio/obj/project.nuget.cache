@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "1bnkhXU2SERLNpz+qQ1MvsXruMACZnxaTFi1WWtigQWzxzLKyjuhfJ6gR8uo9PnAEvyxjnlz3Nf8KK2DLy+iaA==",
+  "success": true,
+  "projectFilePath": "C:\\Udemy\\C# e .net TDD e XUnit\\vs-2019-TDD-XUnit\\src\\CursoOnLine.Dominio\\CursoOnLine.Dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sérgio\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Sérgio\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
