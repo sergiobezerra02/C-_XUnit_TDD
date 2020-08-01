@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7kGLKS4sAicZIuLzEzUH2VZ7l7i4Xl2x8whrkE4Oo+1LlZmHulJkBZ7GEOEAtTuM0J+plLC+bl6rcxo4mdxiLQ==",
+  "dgSpecHash": "Jxo5ACH9YRNTAvA0gk76TWfUNOHAQP99w01aGN6SG6yUZCAByAE0goQtxzaZMS0Z6trWIAnlNvg0aPYgxQ5oeQ==",
   "success": true,
   "projectFilePath": "C:\\Udemy\\C# e .net TDD e XUnit\\vs-2019-TDD-XUnit\\test\\CursoOnLine.DominioTest\\CursoOnLine.DominioTest.csproj",
   "expectedPackageFiles": [

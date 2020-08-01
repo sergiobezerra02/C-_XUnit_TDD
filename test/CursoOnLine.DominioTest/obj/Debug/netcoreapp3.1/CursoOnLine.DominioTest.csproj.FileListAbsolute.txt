@@ -96,3 +96,5 @@ C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\test\CursoOnLine.DominioTest\ob
 C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\test\CursoOnLine.DominioTest\bin\Debug\netcoreapp3.1\ExpectedObjects.dll
 C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\test\CursoOnLine.DominioTest\bin\Debug\netcoreapp3.1\Bogus.dll
 C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\test\CursoOnLine.DominioTest\obj\Debug\netcoreapp3.1\CursoOnLine.DominioTest.csproj.CoreCompileInputs.cache
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\test\CursoOnLine.DominioTest\bin\Debug\netcoreapp3.1\CursoOnLine.Dominio.dll
+C:\Udemy\C# e .net TDD e XUnit\vs-2019-TDD-XUnit\test\CursoOnLine.DominioTest\bin\Debug\netcoreapp3.1\CursoOnLine.Dominio.pdb

@@ -1,4 +1,5 @@
-﻿using CursoOnLine.DominioTest.Cursos;
+﻿using CursoOnLine.Dominio.Enumeration;
+using CursoOnLine.Dominio.Curso;
 
 
 namespace CursoOnLine.DominioTest._Builder

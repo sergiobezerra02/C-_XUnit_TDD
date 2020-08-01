@@ -1668,6 +1668,16 @@
         "build": {
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "CursoOnLine.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CursoOnLine.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CursoOnLine.Dominio.dll": {}
+        }
       }
     }
   },
@@ -5665,11 +5675,17 @@
         "xunit.runner.visualstudio.2.4.0.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "CursoOnLine.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../../src/CursoOnLine.Dominio/CursoOnLine.Dominio.csproj",
+      "msbuildProject": "../../src/CursoOnLine.Dominio/CursoOnLine.Dominio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Bogus >= 29.0.2",
+      "CursoOnLine.Dominio >= 1.0.0",
       "ExpectedObjects >= 2.3.4",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "coverlet.collector >= 1.2.0",
@@ -5702,7 +5718,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Udemy\\C# e .net TDD e XUnit\\vs-2019-TDD-XUnit\\src\\CursoOnLine.Dominio\\CursoOnLine.Dominio.csproj": {
+              "projectPath": "C:\\Udemy\\C# e .net TDD e XUnit\\vs-2019-TDD-XUnit\\src\\CursoOnLine.Dominio\\CursoOnLine.Dominio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
