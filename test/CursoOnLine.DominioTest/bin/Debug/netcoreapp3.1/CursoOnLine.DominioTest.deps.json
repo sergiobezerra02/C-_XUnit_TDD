@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "CursoOnLine.DominioTest/1.0.0": {
         "dependencies": {
+          "Bogus": "29.0.2",
           "ExpectedObjects": "2.3.4",
           "Microsoft.NET.Test.Sdk": "16.5.0",
           "coverlet.collector": "1.2.0",
@@ -16,6 +17,14 @@
         },
         "runtime": {
           "CursoOnLine.DominioTest.dll": {}
+        }
+      },
+      "Bogus/29.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Bogus.dll": {
+            "assemblyVersion": "29.0.2.0",
+            "fileVersion": "29.0.2.0"
+          }
         }
       },
       "coverlet.collector/1.2.0": {},
@@ -1106,6 +1115,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Bogus/29.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rrKyfSWt/eFj6k1JnvapMPfxmoQmo0y/9AK596kCm7sbmTxGq7j2iFVBNAFY3eXS0GCsdoI8vFgyxgQRWLjh3A==",
+      "path": "bogus/29.0.2",
+      "hashPath": "bogus.29.0.2.nupkg.sha512"
     },
     "coverlet.collector/1.2.0": {
       "type": "package",

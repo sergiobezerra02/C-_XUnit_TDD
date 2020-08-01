@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4qhDblkRqlqpa/6qZpnaIkL43pvz6UOCDAF7D30Si1ofCPbY0+TKiGd1ErIsghIJF0k67Y+yOdGxzo6nn1bMrA==",
+  "dgSpecHash": "7kGLKS4sAicZIuLzEzUH2VZ7l7i4Xl2x8whrkE4Oo+1LlZmHulJkBZ7GEOEAtTuM0J+plLC+bl6rcxo4mdxiLQ==",
   "success": true,
   "projectFilePath": "C:\\Udemy\\C# e .net TDD e XUnit\\vs-2019-TDD-XUnit\\test\\CursoOnLine.DominioTest\\CursoOnLine.DominioTest.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Sérgio\\.nuget\\packages\\bogus\\29.0.2\\bogus.29.0.2.nupkg.sha512",
     "C:\\Users\\Sérgio\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\Sérgio\\.nuget\\packages\\expectedobjects\\2.3.4\\expectedobjects.2.3.4.nupkg.sha512",
     "C:\\Users\\Sérgio\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

@@ -1,4 +1,5 @@
-﻿using CursoOnLine.DominioTest._Builder;
+﻿using Bogus;
+using CursoOnLine.DominioTest._Builder;
 using CursoOnLine.DominioTest._Util;
 using ExpectedObjects;
 using System;
@@ -23,12 +24,21 @@ namespace CursoOnLine.DominioTest.Cursos
             this._output = output;
             this._output.WriteLine("Construtor executado");
 
-            _id = 1;
-            _nome = "Ana Maria";
-            _cargaHoraria = 80;
+            var fake = new Faker();
+
+            _id = fake.Random.Int(1,2147483647);
+            _nome = fake.Person.FullName;
+            _cargaHoraria = fake.Random.Double(60,120);
             _publicoAlvo = PublicoAlvo.Estudante;
-            _valor = 950;
-            _descricao = "Curso Informática";
+            _valor = fake.Random.Double(60, 1000);
+            _descricao = fake.Lorem.Paragraph();
+
+            this._output.WriteLine(_id.ToString());
+            this._output.WriteLine(_nome);
+            this._output.WriteLine(_cargaHoraria.ToString());
+            this._output.WriteLine(_publicoAlvo.ToString());
+            this._output.WriteLine(_valor.ToString());
+            this._output.WriteLine(_descricao);
         }
 
         public void Dispose()
