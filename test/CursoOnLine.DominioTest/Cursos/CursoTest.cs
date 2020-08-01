@@ -58,7 +58,7 @@ namespace CursoOnLine.DominioTest.Cursos
             var cursoEsperado = new
             {
                 Id = 1,
-                Nome = "Ana Maria",
+                Nome = "Curso A",
                 CargaHoraria = (double)80,
                 PublicoAlvo = PublicoAlvo.Estudante,
                 Valor = (double)950,
