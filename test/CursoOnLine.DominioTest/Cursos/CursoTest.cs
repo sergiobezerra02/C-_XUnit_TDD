@@ -1,4 +1,5 @@
-﻿using CursoOnLine.DominioTest._Util;
+﻿using CursoOnLine.DominioTest._Builder;
+using CursoOnLine.DominioTest._Util;
 using ExpectedObjects;
 using System;
 using Xunit;
@@ -15,6 +16,7 @@ namespace CursoOnLine.DominioTest.Cursos
         private double _cargaHoraria;
         private PublicoAlvo _publicoAlvo;
         private double _valor;
+        private string _descricao;
 
         public CursoTest(ITestOutputHelper output)
         {
@@ -26,6 +28,7 @@ namespace CursoOnLine.DominioTest.Cursos
             _cargaHoraria = 80;
             _publicoAlvo = PublicoAlvo.Estudante;
             _valor = 950;
+            _descricao = "Curso Informática";
         }
 
         public void Dispose()
@@ -46,12 +49,14 @@ namespace CursoOnLine.DominioTest.Cursos
                 Nome = "Ana Maria",
                 CargaHoraria = (double)80,
                 PublicoAlvo = PublicoAlvo.Estudante,
-                Valor = (double)950
+                Valor = (double)950,
+                Descricao = "Curso Informática"
             };
          
 
             //Ação
-            var curso = new Curso(cursoEsperado.Id, cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
+            var curso = new Curso(cursoEsperado.Id, cursoEsperado.Nome, 
+                cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor, cursoEsperado.Descricao);
 
             //Verificação
             cursoEsperado.ToExpectedObject().ShouldMatch(curso);
@@ -68,11 +73,7 @@ namespace CursoOnLine.DominioTest.Cursos
             //Construtor
   
             //Ação e Verificação
-            Assert.Throws<ArgumentException>(() => new Curso(_id, string.Empty,
-                _cargaHoraria, _publicoAlvo, _valor))
-                .ComMensagem("Nome Inválido");
-
-         
+            Assert.Throws<ArgumentException>(() => CursoBuilder.GetCursoBuilder().ComNome(nomeInvalido).Build()).ComMensagem("Nome Inválido");        
         }
 
 
@@ -87,9 +88,7 @@ namespace CursoOnLine.DominioTest.Cursos
             //Construtor
 
             //Ação e Verificação
-            Assert.Throws<ArgumentException>(() => new Curso(_id, _nome, 
-                cargaHorariaInvalida, _publicoAlvo, _valor))
-                .ComMensagem("Carga Horária Inválida");
+            Assert.Throws<ArgumentException>(() => CursoBuilder.GetCursoBuilder().ComCargaHoraria(cargaHorariaInvalida).Build()).ComMensagem("Carga Horária Inválida");
 
         }
 
@@ -106,9 +105,7 @@ namespace CursoOnLine.DominioTest.Cursos
             //Construtor
 
             //Ação e Verificação
-            Assert.Throws<ArgumentException>(() => new Curso(_id, _nome, 
-                _cargaHoraria, _publicoAlvo, valorInvalido))
-                .ComMensagem("Valor Inválido");
+            Assert.Throws<ArgumentException>(() => CursoBuilder.GetCursoBuilder().ComValor(valorInvalido).Build()).ComMensagem("Valor Inválido");
 
         }
 
@@ -131,10 +128,11 @@ namespace CursoOnLine.DominioTest.Cursos
         private double _cargaHoraria;
         private PublicoAlvo _publicoAlvo;
         private double _valor;
+        private string _descricao;
 
         public Curso() { }
 
-        public Curso(int id, string nome, double cargaHoraria, PublicoAlvo publicoAlvo, double valor)
+        public Curso(int id, string nome, double cargaHoraria, PublicoAlvo publicoAlvo, double valor, string descricao)
         {
 
             if(string.IsNullOrEmpty(nome))
@@ -157,6 +155,7 @@ namespace CursoOnLine.DominioTest.Cursos
             this._cargaHoraria = cargaHoraria;
             this._publicoAlvo = publicoAlvo;
             this._valor = valor;
+            this._descricao = descricao;
         }
 
         public int Id
@@ -187,6 +186,12 @@ namespace CursoOnLine.DominioTest.Cursos
         {
             get { return this._valor; }
             set { this._valor = value; }
+        }
+
+        public string Descricao
+        {
+            get { return this._descricao; }
+            set { this._descricao = value; }
         }
 
         public override bool Equals(object obj)
