@@ -2,16 +2,44 @@
 using ExpectedObjects;
 using System;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace CursoOnLine.DominioTest.Cursos
 {
-    public class CursoTest
+    public class CursoTest :IDisposable
     {
+
+        private readonly ITestOutputHelper _output;
+        private int _id;
+        private string _nome;
+        private double _cargaHoraria;
+        private PublicoAlvo _publicoAlvo;
+        private double _valor;
+
+        public CursoTest(ITestOutputHelper output)
+        {
+            this._output = output;
+            this._output.WriteLine("Construtor executado");
+
+            _id = 1;
+            _nome = "Ana Maria";
+            _cargaHoraria = 80;
+            _publicoAlvo = PublicoAlvo.Estudante;
+            _valor = 950;
+        }
+
+        public void Dispose()
+        {
+            this._output.WriteLine("Dispose() executado");
+        }
+    
+
         [Fact]
         public void Teste_Dominio_Curso()
         {
             //Cenário
             //Biblioteca ExpectedObject
+            //Construtor
             var cursoEsperado = new
             {
                 Id = 1,
@@ -37,19 +65,11 @@ namespace CursoOnLine.DominioTest.Cursos
         {
             //Cenário
             //Biblioteca ExpectedObject
-            var cursoEsperado = new
-            {
-                Id = 1,
-                Nome = "Ana Maria",
-                CargaHoraria = (double)80,
-                PublicoAlvo = PublicoAlvo.Estudante,
-                Valor = (double)950
-            };
-
-
+            //Construtor
+  
             //Ação e Verificação
-            Assert.Throws<ArgumentException>(() => new Curso(cursoEsperado.Id, string.Empty,
-                cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor))
+            Assert.Throws<ArgumentException>(() => new Curso(_id, string.Empty,
+                _cargaHoraria, _publicoAlvo, _valor))
                 .ComMensagem("Nome Inválido");
 
          
@@ -64,19 +84,11 @@ namespace CursoOnLine.DominioTest.Cursos
         {
             //Cenário
             //Biblioteca ExpectedObject
-            var cursoEsperado = new
-            {
-                Id = 1,
-                Nome = "Ana Maria",
-                CargaHoraria = (double)80,
-                PublicoAlvo = PublicoAlvo.Estudante,
-                Valor = (double)950
-            };
-
+            //Construtor
 
             //Ação e Verificação
-            Assert.Throws<ArgumentException>(() => new Curso(cursoEsperado.Id, cursoEsperado.Nome, 
-                cargaHorariaInvalida, cursoEsperado.PublicoAlvo, cursoEsperado.Valor))
+            Assert.Throws<ArgumentException>(() => new Curso(_id, _nome, 
+                cargaHorariaInvalida, _publicoAlvo, _valor))
                 .ComMensagem("Carga Horária Inválida");
 
         }
@@ -91,26 +103,16 @@ namespace CursoOnLine.DominioTest.Cursos
         {
             //Cenário
             //Biblioteca ExpectedObject
-            var cursoEsperado = new
-            {
-                Id = 1,
-                Nome = "Ana Maria",
-                CargaHoraria = (double)80,
-                PublicoAlvo = PublicoAlvo.Estudante,
-                Valor = (double)950
-            };
-
+            //Construtor
 
             //Ação e Verificação
-            Assert.Throws<ArgumentException>(() => new Curso(cursoEsperado.Id, cursoEsperado.Nome, 
-                cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, valorInvalido))
+            Assert.Throws<ArgumentException>(() => new Curso(_id, _nome, 
+                _cargaHoraria, _publicoAlvo, valorInvalido))
                 .ComMensagem("Valor Inválido");
 
         }
 
-
-
-
+        
     }
 
 
@@ -124,11 +126,11 @@ namespace CursoOnLine.DominioTest.Cursos
 
     public class Curso
     {
-        private int id;
-        private string nome;
-        private double cargaHoraria;
-        private PublicoAlvo publicoAlvo;
-        private double valor;
+        private int _id;
+        private string _nome;
+        private double _cargaHoraria;
+        private PublicoAlvo _publicoAlvo;
+        private double _valor;
 
         public Curso() { }
 
@@ -150,41 +152,41 @@ namespace CursoOnLine.DominioTest.Cursos
                 throw new ArgumentException("Valor Inválido");
             }
 
-            this.id = id;
-            this.nome = nome;
-            this.cargaHoraria = cargaHoraria;
-            this.publicoAlvo = publicoAlvo;
-            this.valor = valor;
+            this._id = id;
+            this._nome = nome;
+            this._cargaHoraria = cargaHoraria;
+            this._publicoAlvo = publicoAlvo;
+            this._valor = valor;
         }
 
         public int Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         public string Nome
         {
-            get { return this.nome; }
-            set { this.nome = value; }
+            get { return this._nome; }
+            set { this._nome = value; }
         }
 
         public double CargaHoraria
         {
-            get { return this.cargaHoraria; }
-            set { this.cargaHoraria = value; }
+            get { return this._cargaHoraria; }
+            set { this._cargaHoraria = value; }
         }
 
         public PublicoAlvo PublicoAlvo
         {
-            get { return this.publicoAlvo; }
-            set { this.publicoAlvo = value; }
+            get { return this._publicoAlvo; }
+            set { this._publicoAlvo = value; }
         }
 
         public double Valor
         {
-            get { return this.valor; }
-            set { this.valor = value; }
+            get { return this._valor; }
+            set { this._valor = value; }
         }
 
         public override bool Equals(object obj)
@@ -200,7 +202,7 @@ namespace CursoOnLine.DominioTest.Cursos
 
         public string DadosCurso()
         {
-            return $"[Curso => Id: {this.id} , Nome: {this.nome} , PublicoAlvo: {this.publicoAlvo} , Valor: {this.valor} ]";
+            return $"[Curso => Id: {this._id} , Nome: {this._nome} , PublicoAlvo: {this._publicoAlvo} , Valor: {this._valor} ]";
 
         }
     }
